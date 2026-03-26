@@ -50,14 +50,9 @@ This works within the same PDF, across different PDFs, and even when opening lin
 
 ### 📦 Installation
 
-<details>
-<summary>Manual installation</summary>
-
 1. Download `annotation-links.xpi` from the [latest release](https://github.com/mobench/zotero-annotation-links/releases/latest)
 2. In Zotero: **Tools > Add-ons > gear icon > Install Add-on from File**
 3. Select the `.xpi` file and enable the plugin
-
-</details>
 
 ### ⌨️ Keyboard Shortcuts
 
