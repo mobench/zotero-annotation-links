@@ -30,9 +30,9 @@ export function extractZoteroLinks(text: string): ZoteroLink[] {
     links.push({
       url: fullUrl,
       itemKey,
-      page: params.get("page") || undefined,
-      annotationKey: params.get("annotation") || undefined,
-      groupID: groupID || undefined,
+      page: params.get("page") ?? undefined,
+      annotationKey: params.get("annotation") ?? undefined,
+      groupID,
     });
   }
 

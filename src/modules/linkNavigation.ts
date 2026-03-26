@@ -35,7 +35,7 @@ export async function navigateToAnnotation(link: ZoteroLink): Promise<void> {
       location.pageIndex = parseInt(link.page) - 1;
     }
 
-    // Navigate
+    // Open the PDF — the patched Reader.open in hooks.ts handles annotation focus
     await Zotero.Reader.open(item.id, location);
   } catch (e) {
     Zotero.debug(`[AnnotationLinks] Navigation failed, falling back: ${e}`);
