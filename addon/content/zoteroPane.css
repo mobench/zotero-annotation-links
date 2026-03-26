@@ -1,1 +1,46 @@
-/* Annotation Links - styles added in Milestone 3 */
+.annotation-links-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+  color: var(--fill-secondary);
+  position: relative;
+  margin-inline-start: 4px;
+}
+
+.annotation-links-icon:hover {
+  color: var(--accent-blue50, #2563eb);
+  background: var(--color-quinary, rgba(0, 0, 0, 0.06));
+  transform: scale(1.1);
+}
+
+.annotation-links-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.annotation-links-dropdown {
+  position: absolute;
+  top: 100%;
+  inset-inline-end: 0;
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  min-width: 120px;
+  padding: 4px 0;
+}
+
+.annotation-links-dropdown-item {
+  padding: 4px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.annotation-links-dropdown-item:hover {
+  background: var(--color-background);
+}
