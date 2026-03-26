@@ -4,7 +4,7 @@
 
 **Clickable cross-reference links between PDF annotations in Zotero.**
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 [![Zotero](https://img.shields.io/badge/Zotero-7+-darkgreen.svg)](https://www.zotero.org)
 
 </div>
@@ -34,12 +34,11 @@ This plugin solves that by making `zotero://` links in annotation comments **cli
 ### ✨ Features
 
 - **Copy Annotation Link** — Right-click any annotation or press `Ctrl+Shift+C` to copy its `zotero://` deep link
-- **🔗 Clickable link icons** — Annotations containing `zotero://` links show a chain icon in the sidebar; click to navigate
-- **🎯 Auto-focus** — The target annotation is automatically selected and highlighted after navigation
-- **📄 Cross-document detection** — Links to other PDFs show an external link icon with the document title on hover
-- **📋 Multi-link support** — Annotations with multiple links show a dropdown to pick the target
-- **✅ "Link copied" notification** — Visual confirmation when a link is copied to clipboard
-- **🌍 Localized** — English and Arabic UI
+- **Clickable link icons** — Annotations containing `zotero://` links show a chain icon in the sidebar; click to navigate
+- **Auto-focus** — The target annotation is automatically selected and highlighted after navigation
+- **Cross-document detection** — Links to other PDFs show an external link icon with the document title on hover
+- **Multi-link support** — Annotations with multiple links show a dropdown to pick the target
+- **"Link copied" notification** — Visual confirmation when a link is copied to clipboard
 
 ### 🚀 How It Works
 
@@ -86,7 +85,7 @@ If you find this plugin useful, consider [buying me a coffee](https://buymeacoff
 
 ### 📄 License
 
-[MIT](LICENSE)
+[AGPL-3.0](LICENSE)
 
 ---
 
