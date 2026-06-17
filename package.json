@@ -1,7 +1,7 @@
 {
   "name": "zotero-annotation-links",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Clickable cross-reference links between PDF annotations in Zotero. Support: buymeacoffee.com/mobench",
   "config": {
     "addonName": "Annotation Links",

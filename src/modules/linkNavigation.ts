@@ -1,13 +1,40 @@
 import { ZoteroLink } from "./linkDetector";
 
+export async function navigateToZoteroLink(link: ZoteroLink): Promise<void> {
+  const isPdfAnnotation =
+    (link.action === "open" || link.action === "open-pdf") &&
+    link.objectType === "items" &&
+    !!link.annotationKey &&
+    !link.cfi &&
+    !link.sel;
+
+  if (isPdfAnnotation) {
+    await navigateToAnnotation(link); // optimized Reader.open + focus patch
+  } else {
+    dispatchZoteroUri(link.url); // select / collection / EPUB / page-only
+  }
+}
+
+function dispatchZoteroUri(url: string): void {
+  try {
+    const pane = Zotero.getActiveZoteroPane?.();
+    if (pane?.loadURI) {
+      pane.loadURI(url);
+    } else {
+      Zotero.launchURL(url);
+    }
+  } catch (e) {
+    Zotero.debug(`[AnnotationLinks] zotero:// dispatch failed: ${e}`);
+    Zotero.launchURL(url);
+  }
+}
+
 export async function navigateToAnnotation(link: ZoteroLink): Promise<void> {
   try {
     // Resolve library ID
     let libraryID: number;
     if (link.groupID) {
-      const group = (Zotero.Groups as any).getByGroupID(
-        parseInt(link.groupID),
-      );
+      const group = (Zotero.Groups as any).getByGroupID(parseInt(link.groupID));
       if (!group) {
         Zotero.debug(`[AnnotationLinks] Group ${link.groupID} not found`);
         return;
@@ -40,5 +67,13 @@ export async function navigateToAnnotation(link: ZoteroLink): Promise<void> {
   } catch (e) {
     Zotero.debug(`[AnnotationLinks] Navigation failed, falling back: ${e}`);
     Zotero.launchURL(link.url);
+  }
+}
+
+export function openWebLink(url: string): void {
+  try {
+    Zotero.launchURL(url);
+  } catch (e) {
+    Zotero.debug(`[AnnotationLinks] Failed to open web link: ${e}`);
   }
 }
