@@ -1,6 +1,7 @@
 import { registerAnnotationHeader } from "./modules/annotationHeader";
 import { registerContextMenu } from "./modules/contextMenu";
-import { buildAnnotationUrl } from "./modules/urlBuilder";
+import { buildAnnotationLinkText } from "./modules/linkTemplate";
+import { registerPreferencePane } from "./modules/preferencePane";
 import { initLocale } from "./utils/locale";
 import { createZToolkit } from "./utils/ztoolkit";
 
@@ -13,6 +14,7 @@ async function onStartup() {
 
   initLocale();
 
+  registerPreferencePane();
   registerContextMenu();
   registerAnnotationHeader();
   patchReaderOpenForAnnotationFocus();
@@ -30,8 +32,8 @@ async function onStartup() {
         reader._internalReader._state.selectedAnnotationIDs[0];
       if (!annotationKey) return;
 
-      const url = buildAnnotationUrl(reader._item, annotationKey);
-      new ztoolkit.Clipboard().addText(url, "text/unicode").copy();
+      const linkText = buildAnnotationLinkText(reader._item, annotationKey);
+      new ztoolkit.Clipboard().addText(linkText, "text/unicode").copy();
       new ztoolkit.ProgressWindow(addon.data.config.addonName)
         .createLine({ text: "Link copied", type: "success" })
         .show(2000);
