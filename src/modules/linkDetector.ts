@@ -10,6 +10,7 @@ export interface ZoteroLink {
   sel?: string;
 }
 
+// Regex that assembles Zotero links from the text
 const ZOTERO_LINK_REGEX =
   /zotero:\/\/(open-pdf|open|select)\/(?:groups\/(\d+)\/|library\/)(items|collections)\/([A-Z0-9]+)(\?[^\s]*)?/gi;
 
@@ -23,15 +24,16 @@ export function extractZoteroLinks(text: string): ZoteroLink[] {
   ZOTERO_LINK_REGEX.lastIndex = 0;
 
   while ((match = ZOTERO_LINK_REGEX.exec(text)) !== null) {
-    const fullUrl = match[0];
+    const fullUrl = trimLinkWrapper(match[0]);
     const action = match[1] as ZoteroLink["action"];
     const groupID = match[2]; // undefined for "library", number string for groups
     const objectType = match[3] as ZoteroLink["objectType"];
     const itemKey = match[4];
-    const queryString = match[5] || "";
+    const queryIndex = fullUrl.indexOf("?");
+    const queryString = queryIndex >= 0 ? fullUrl.slice(queryIndex + 1) : "";
 
     // Parse query params
-    const params = new URLSearchParams(queryString.replace(/^\?/, ""));
+    const params = new URLSearchParams(queryString);
 
     links.push({
       url: fullUrl,
@@ -47,6 +49,24 @@ export function extractZoteroLinks(text: string): ZoteroLink[] {
   }
 
   return links;
+}
+
+// Strip trailing characters that wrap the link rather than belong to it,
+// e.g. the `)` of a Markdown link `[Page 2](zotero://...)` from a link template.
+// A balanced `)` is kept, as EPUB links can contain `cfi=epubcfi(...)`.
+function trimLinkWrapper(url: string): string {
+  while (url) {
+    const last = url[url.length - 1];
+    if (last === ")") {
+      const opening = url.split("(").length - 1;
+      const closing = url.split(")").length - 1;
+      if (closing <= opening) break;
+    } else if (!/[\]>"'.,;:!?]/.test(last)) {
+      break;
+    }
+    url = url.slice(0, -1);
+  }
+  return url;
 }
 
 const WEB_LINK_REGEX = /https?:\/\/[^\s<>"']+/gi;

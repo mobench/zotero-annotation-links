@@ -39,6 +39,7 @@ This plugin solves that by making `zotero://` links in annotation comments **cli
 - **Cross-document detection** — Links to other PDFs show an external link icon with the document title on hover
 - **Multi-link support** — Annotations with multiple links show a dropdown to pick the target
 - **"Link copied" notification** — Visual confirmation when a link is copied to clipboard
+- **Link templates** — Wrap copied links in your own format, e.g. a Markdown link for Obsidian
 
 ### 🚀 How It Works
 
@@ -69,6 +70,16 @@ zotero://open-pdf/library/items/{ITEM_KEY}?page={PAGE}&annotation={ANNOTATION_KE
 ```
 
 These links are generated automatically — no need to construct them manually.
+
+### 🧩 Link Templates
+
+To copy links in another format, set a template in **Settings > Annotation Links**. For example, `[Page {page}]({link})` copies a Markdown link ready to paste into Obsidian:
+
+```
+[Page 2](zotero://open-pdf/library/items/ABCD1234?page=2&annotation=WXYZ5678)
+```
+
+See [Link Templates](docs/link-template.md) for all placeholders and examples.
 
 ### 🤝 Contributing
 

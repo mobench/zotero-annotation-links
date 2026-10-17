@@ -6,5 +6,10 @@ export type FluentMessageId =
   | 'context-menu-copy-link'
   | 'link-icon-tooltip'
   | 'link-icon-tooltip-multiple'
+  | 'pref-link-template'
+  | 'pref-link-template-description'
+  | 'pref-link-template-docs'
+  | 'pref-title'
+  | 'prefs-title'
   | 'startup-begin'
   | 'startup-finish';
