@@ -4,7 +4,20 @@
 // @ts-nocheck
 export type FluentMessageId =
   | 'context-menu-copy-link'
+  | 'context-menu-copy-link-numbered'
   | 'link-icon-tooltip'
   | 'link-icon-tooltip-multiple'
+  | 'pref-link-label'
+  | 'pref-link-label-input'
+  | 'pref-link-template'
+  | 'pref-link-template-description'
+  | 'pref-link-template-docs'
+  | 'pref-more-links-description'
+  | 'pref-more-links-label'
+  | 'pref-more-links-label-input'
+  | 'pref-more-links-template'
+  | 'pref-more-links-title'
+  | 'pref-title'
+  | 'prefs-title'
   | 'startup-begin'
   | 'startup-finish';

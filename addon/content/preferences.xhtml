@@ -1,0 +1,114 @@
+<linkset>
+  <html:link rel="localization" href="__addonRef__-preferences.ftl" />
+</linkset>
+<groupbox>
+  <label><html:h2 data-l10n-id="pref-title"></html:h2></label>
+  <vbox>
+    <html:label
+      for="zotero-prefpane-__addonRef__-link-template"
+      data-l10n-id="pref-link-template"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-template"
+      preference="linkTemplate"
+      placeholder="{link}"
+      style="font-family: monospace"
+    ></html:input>
+    <description data-l10n-id="pref-link-template-description" />
+    <html:a
+      href="https://github.com/mobench/zotero-annotation-links/blob/master/docs/link-template.md"
+      onclick="
+        Zotero.launchURL(this.href);
+        return false;
+      "
+      data-l10n-id="pref-link-template-docs"
+    ></html:a>
+  </vbox>
+  <vbox>
+    <html:label
+      for="zotero-prefpane-__addonRef__-link-label"
+      data-l10n-id="pref-link-label"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-label"
+      preference="linkLabel"
+      data-l10n-id="pref-link-label-input"
+    ></html:input>
+  </vbox>
+</groupbox>
+<groupbox>
+  <label><html:h2 data-l10n-id="pref-more-links-title"></html:h2></label>
+  <description data-l10n-id="pref-more-links-description" />
+  <html:div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4px 8px">
+    <html:label
+      id="zotero-prefpane-__addonRef__-more-links-label"
+      data-l10n-id="pref-more-links-label"
+    ></html:label>
+    <html:label
+      id="zotero-prefpane-__addonRef__-more-links-template"
+      data-l10n-id="pref-more-links-template"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-label-2"
+      preference="linkLabel2"
+      data-l10n-id="pref-more-links-label-input"
+      data-l10n-args='{"number": 2}'
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-label"
+    ></html:input>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-template-2"
+      preference="linkTemplate2"
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-template"
+      style="font-family: monospace"
+    ></html:input>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-label-3"
+      preference="linkLabel3"
+      data-l10n-id="pref-more-links-label-input"
+      data-l10n-args='{"number": 3}'
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-label"
+    ></html:input>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-template-3"
+      preference="linkTemplate3"
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-template"
+      style="font-family: monospace"
+    ></html:input>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-label-4"
+      preference="linkLabel4"
+      data-l10n-id="pref-more-links-label-input"
+      data-l10n-args='{"number": 4}'
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-label"
+    ></html:input>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-template-4"
+      preference="linkTemplate4"
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-template"
+      style="font-family: monospace"
+    ></html:input>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-label-5"
+      preference="linkLabel5"
+      data-l10n-id="pref-more-links-label-input"
+      data-l10n-args='{"number": 5}'
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-label"
+    ></html:input>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-link-template-5"
+      preference="linkTemplate5"
+      aria-labelledby="zotero-prefpane-__addonRef__-more-links-template"
+      style="font-family: monospace"
+    ></html:input>
+  </html:div>
+</groupbox>

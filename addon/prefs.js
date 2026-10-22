@@ -1,0 +1,10 @@
+pref("linkTemplate", "{link}");
+pref("linkLabel", "");
+pref("linkTemplate2", "");
+pref("linkLabel2", "");
+pref("linkTemplate3", "");
+pref("linkLabel3", "");
+pref("linkTemplate4", "");
+pref("linkLabel4", "");
+pref("linkTemplate5", "");
+pref("linkLabel5", "");

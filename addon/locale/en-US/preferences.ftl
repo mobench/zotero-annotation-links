@@ -1,0 +1,13 @@
+pref-title = Annotation Links
+pref-link-template = Link template
+pref-link-template-description = Text copied by the main copy option and Ctrl+Shift+C. Placeholders like { "{link}" } and { "{page}" } are replaced with the annotation's values, e.g. { "[Page {page}]({link})" } copies a Markdown link.
+pref-link-template-docs = All placeholders and examples
+pref-link-label = Menu label
+pref-link-label-input =
+    .placeholder = Copy Annotation Link
+pref-more-links-title = More Copy Options
+pref-more-links-description = Each option with a template is added below the main option when you right-click an annotation, e.g. a quote with { "> \"{text}\" ([{citation}, p. {page}]({link}))" }. An option without a label is shown as "Annotation Link" and its number, from 2 to 5.
+pref-more-links-label = Menu label
+pref-more-links-label-input =
+    .placeholder = Annotation Link { $number }
+pref-more-links-template = Link template

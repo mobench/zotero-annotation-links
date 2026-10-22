@@ -39,6 +39,8 @@ This plugin solves that by making `zotero://` links in annotation comments **cli
 - **Cross-document detection** — Links to other PDFs show an external link icon with the document title on hover
 - **Multi-link support** — Annotations with multiple links show a dropdown to pick the target
 - **"Link copied" notification** — Visual confirmation when a link is copied to clipboard
+- **Link templates** — Wrap copied links in your own format, e.g. a Markdown link for Obsidian
+- **More copy options** — Add up to four more right-click options, each with its own label and template, e.g. a citation and a quote
 
 ### 🚀 How It Works
 
@@ -56,8 +58,8 @@ This works within the same PDF, across different PDFs, and even when opening lin
 
 ### ⌨️ Keyboard Shortcuts
 
-| Shortcut | Action |
-|----------|--------|
+| Shortcut       | Action                                |
+| -------------- | ------------------------------------- |
 | `Ctrl+Shift+C` | Copy link for the selected annotation |
 
 ### 🔗 Link Format
@@ -69,6 +71,18 @@ zotero://open-pdf/library/items/{ITEM_KEY}?page={PAGE}&annotation={ANNOTATION_KE
 ```
 
 These links are generated automatically — no need to construct them manually.
+
+### 🧩 Link Templates
+
+To copy links in another format, set a template in **Settings > Annotation Links**. For example, `[Page {page}]({link})` copies a Markdown link ready to paste into Obsidian:
+
+```
+[Page 2](zotero://open-pdf/library/items/ABCD1234?page=2&annotation=WXYZ5678)
+```
+
+To copy an annotation in several formats, add up to four more copy options, each with its own menu label and template — e.g. "Copy Quote" with `{text} ([{citation}]({link}))`. `Ctrl+Shift+C` copies the main template.
+
+See [Link Templates](docs/link-template.md) for all placeholders and examples.
 
 ### 🤝 Contributing
 
